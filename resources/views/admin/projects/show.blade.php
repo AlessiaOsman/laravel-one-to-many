@@ -13,6 +13,11 @@
         <div class="card-body d-flex flex-column justify-content-between" style="height: 100%;">
             <div>
                 <h5 class="card-title">{{ $project->title }}</h5>
+                <h4>Categoria: @if ($project->type) 
+                    <span style="background-color: {{$project->type->color}}" class="badge text-bg-primary">{{$project->type->label}}</span>
+                    @else
+                    Nessuna
+                    @endif</h4>
                 <p class="card-text">{{ $project->content }}</p>
                 <p class="card-text"><small class="text-body-secondary"><a
                             href="{{ $project->url }}">{{ $project->url }}</a></small></p>

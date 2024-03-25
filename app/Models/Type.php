@@ -9,6 +9,8 @@ class Type extends Model
 {
     use HasFactory;
 
+    protected $fillable = ['label', 'color'];
+
     //questa funzione si richiama come proprietà $type->projects
 
     public function projects(){

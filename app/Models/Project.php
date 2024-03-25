@@ -13,7 +13,7 @@ class Project extends Model
     use HasFactory;
     use SoftDeletes;
 
-    protected $fillable = ['title', 'content', 'url'];
+    protected $fillable = ['title', 'content', 'url', 'type_id'];
 
     public function getFormattedDate($column, $format='d-m-Y'){
         

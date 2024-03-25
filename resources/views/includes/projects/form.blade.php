@@ -61,7 +61,20 @@
             @enderror
         </div>
     </div>
-    <div class="col-11">
+    <div class="col-6">
+        <div class="mb-3">
+            <label for="type_id" class="form-label">Seleziona tipologia</label>
+            <select class="form-select @error('type_id') is-invalid
+            @elseif (old('type_id', '')) is-valid 
+          @enderror" name="type_id" id='type_id'>
+                <option value="">Nessuna</option>
+                @foreach ($types as $type )
+                    <option value="{{$type->id}}" @if (old('type_id', $project->type?->id) == $type->id) selected @endif>{{$type->label}}</option>
+                @endforeach
+              </select>
+        </div>
+    </div>
+    <div class="col-5">
        
         <div class="mb-3">
             <label for="image" class="form-label">Immagine</label>
